@@ -93,7 +93,7 @@ function createInputInstance(manager) {
 
     if (inputClass) {
         Type = inputClass;
-    } else if (SUPPORT_POINTER_EVENTS) {
+    } else if (SUPPORT_POINTER_EVENTS && manager.options.supportPointerEvents) {
         Type = PointerEventInput;
     } else if (SUPPORT_ONLY_TOUCH) {
         Type = TouchInput;

@@ -1,7 +1,7 @@
-/*! Hammer.JS - v2.0.7 - 2016-04-22
+/*! Hammer.JS - v2.0.8 - 2018-07-24
  * http://hammerjs.github.io/
  *
- * Copyright (c) 2016 Jorik Tangelder;
+ * Copyright (c) 2018 Jorik Tangelder;
  * Licensed under the MIT license */
 (function(window, document, exportName, undefined) {
   'use strict';
@@ -473,7 +473,7 @@ function createInputInstance(manager) {
 
     if (inputClass) {
         Type = inputClass;
-    } else if (SUPPORT_POINTER_EVENTS) {
+    } else if (SUPPORT_POINTER_EVENTS && manager.options.supportPointerEvents) {
         Type = PointerEventInput;
     } else if (SUPPORT_ONLY_TOUCH) {
         Type = TouchInput;
@@ -2145,7 +2145,7 @@ function Hammer(element, options) {
 /**
  * @const {string}
  */
-Hammer.VERSION = '2.0.7';
+Hammer.VERSION = '2.0.8';
 
 /**
  * default settings
@@ -2189,6 +2189,13 @@ Hammer.defaults = {
      * @default null
      */
     inputClass: null,
+
+    /**
+     * support PointerEvents
+     * @type {Boolean}
+     * @default true
+     */
+    supportPointerEvents: true,
 
     /**
      * Default recognizer setup when calling `Hammer()`

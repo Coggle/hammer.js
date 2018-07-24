@@ -59,6 +59,13 @@ Hammer.defaults = {
     inputClass: null,
 
     /**
+     * support PointerEvents
+     * @type {Boolean}
+     * @default true
+     */
+    supportPointerEvents: true,
+
+    /**
      * Default recognizer setup when calling `Hammer()`
      * When creating a new Manager these will be skipped.
      * @type {Array}
